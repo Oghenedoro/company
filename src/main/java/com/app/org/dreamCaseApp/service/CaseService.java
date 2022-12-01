@@ -36,7 +36,6 @@ public class CaseService implements CaseInterface{
     public CaseDTO update(CaseDTO caseDao,Long id) {
 
         Case aCase = caseRepository.findById(id).orElseThrow(() -> new ResourceIDNotFoundException("Resource not found"));
-        aCase = caseRepository.save(aCase);
         aCase.setDescription(caseDao.getDescription());
         caseRepository.save(aCase);
         return caseMapper.mapFromCaseEntityToDTO(aCase);

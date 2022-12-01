@@ -17,7 +17,6 @@ public class CaseController {
 
     @ResponseStatus(code = HttpStatus.CREATED)
    @PostMapping(path = {"/cases" }, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    // @RequestMapping(value ="/cases", method = RequestMethod.POST)
     public CaseDTO create(@RequestBody CaseDTO caseDao) {
        return caseService.create(caseDao);
     }
